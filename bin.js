@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
-var fs = require('fs');
+var fs = require('fs'),
+    path = require('path');
 
 var log = require('kenny-loggins'),
     colors = require('ansicolors');
@@ -29,16 +30,8 @@ if (process.argv.length !== 3) {
 var type = process.argv.slice().pop();
 
 if (type === '.') {
-  try {
-    log.info('READING LICENSE FROM package.json');
-    var pkg = JSON.parse(fs.readFileSync(process.cwd() + '/package.json', 'utf8'));
-    type = pkg.license;
-    log.info('FOUND %s', type);
-  }
-  catch (err) {
-    log.error('ERROR READING package.json');
-    throw err;
-  }
+  log.info('Reading LICENSE type from package.json');
+  type = require(path.resolve('./package.json')).license;
 }
 
 if (ls.indexOf(type) !== -1) {
@@ -67,5 +60,7 @@ function help() {
   ls.forEach(function (type) {
     log.info('\t* %s', type);
   });
+  log.info('');
+  log.info('To infer from package.json, use license-type `.`');
   log.info('');
 }
