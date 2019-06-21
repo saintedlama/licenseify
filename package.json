@@ -16,11 +16,11 @@
   "author": "Joshua Holbrook",
   "license": "MIT",
   "dependencies": {
-    "read": "~1.0.5",
-    "handlebars": "~4.0.12",
-    "async": "~2.6.1",
-    "kenny-loggins": "0.0.1",
     "ansicolors": "~0.3.2",
-    "pinocchio": "0.0.0"
+    "async": "~2.6.1",
+    "handlebars": "^4.1.2",
+    "kenny-loggins": "0.0.1",
+    "pinocchio": "0.0.0",
+    "read": "~1.0.5"
   }
 }
