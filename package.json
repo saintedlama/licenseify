@@ -15,6 +15,7 @@
   ],
   "author": "Joshua Holbrook",
   "license": "MIT",
+  "repository": "jfhbrook/licenseify",
   "dependencies": {
     "ansicolors": "~0.3.2",
     "async": "~2.6.1",
